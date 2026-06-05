@@ -343,11 +343,11 @@
     </div>
 
     <script>
-        // 【已替換為 GitHub 官方支援的 Raw 線上音訊絕對路徑】
+        // 【全新修正：直接使用相同層級的相對路徑，避開 GitHub Raw 的 Nosniff 封鎖】
         const musicFiles = [
-            'https://raw.githubusercontent.com/hzy0213/undertale-music/main/song1.mp3',
-            'https://raw.githubusercontent.com/hzy0213/undertale-music/main/song2.mp3',
-            'https://raw.githubusercontent.com/hzy0213/undertale-music/main/song3.mp3'
+            'song1.mp3',
+            'song2.mp3',
+            'song3.mp3'
         ];
 
         const natureIcons = ['fa-seedling', 'fa-cloud', 'fa-sun', 'fa-tree', 'fa-leaf', 'fa-mountain'];
@@ -358,8 +358,6 @@
         let repeatMode = 0; 
 
         const audio = new Audio();
-        // 允許跨網域存取，防止本地測試時被 CORS 擋下
-        audio.crossOrigin = "anonymous";
 
         const trackDisplay = document.getElementById('trackDisplay');
         const coverIcon = document.getElementById('coverIcon');
